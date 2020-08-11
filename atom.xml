@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-11T08:26:23.723Z</updated>
+  <updated>2020-08-11T08:41:55.316Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,58 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试3</title>
-    <link href="http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%953/"/>
-    <id>http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%953/</id>
-    <published>2020-08-11T08:26:23.000Z</published>
-    <updated>2020-08-11T08:26:23.723Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>测试2</title>
-    <link href="http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%952/"/>
-    <id>http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%952/</id>
-    <published>2020-08-11T08:23:07.000Z</published>
-    <updated>2020-08-11T08:23:35.285Z</updated>
-    
-    
-    
-    
-    
-    <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>测试</title>
-    <link href="http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%95/"/>
-    <id>http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%95/</id>
-    <published>2020-08-11T08:21:40.000Z</published>
-    <updated>2020-08-11T08:23:45.134Z</updated>
-    
-    
-    
-    
-    
-    <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diyibian</title>
+    <title>第一篇</title>
     <link href="http://yoursite.com/2020/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
     <id>http://yoursite.com/2020/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87/</id>
     <published>2020-08-11T08:18:56.000Z</published>
-    <updated>2020-08-11T08:18:56.400Z</updated>
+    <updated>2020-08-11T08:41:55.316Z</updated>
     
     
     
     
+    <category term="开始" scheme="http://yoursite.com/categories/%E5%BC%80%E5%A7%8B/"/>
+    
+    
+    <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
     
   </entry>
   

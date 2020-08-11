@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87/</loc>
+    
+    <lastmod>2020-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2020-08-11</lastmod>
@@ -29,34 +36,6 @@
     
   </url>
   
-  <url>
-    <loc>http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%953/</loc>
-    
-    <lastmod>2020-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%95/</loc>
-    
-    <lastmod>2020-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/08/11/%E6%B5%8B%E8%AF%952/</loc>
-    
-    <lastmod>2020-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87/</loc>
-    
-    <lastmod>2020-08-11</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>http://yoursite.com/</loc>
@@ -67,12 +46,19 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>http://yoursite.com/tags/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2020-08-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
 
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E5%BC%80%E5%A7%8B/</loc>
+    <lastmod>2020-08-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>

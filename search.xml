@@ -4,64 +4,25 @@
   
     
     <entry>
-      <title>测试3</title>
-      <link href="/2020/08/11/%E6%B5%8B%E8%AF%953/"/>
-      <url>/2020/08/11/%E6%B5%8B%E8%AF%953/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试2</title>
-      <link href="/2020/08/11/%E6%B5%8B%E8%AF%952/"/>
-      <url>/2020/08/11/%E6%B5%8B%E8%AF%952/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试</title>
-      <link href="/2020/08/11/%E6%B5%8B%E8%AF%95/"/>
-      <url>/2020/08/11/%E6%B5%8B%E8%AF%95/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>diyibian</title>
+      <title>第一篇</title>
       <link href="/2020/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
       <url>/2020/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 开始 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 感悟 </tag>
+            
+        </tags>
       
     </entry>
     
