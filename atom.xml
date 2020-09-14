@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-11T07:21:37.825Z</updated>
+  <updated>2020-09-14T02:22:11.967Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入理解计算机系统笔记1</title>
+    <link href="http://yoursite.com/2020/09/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B01/"/>
+    <id>http://yoursite.com/2020/09/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B01/</id>
+    <published>2020-09-11T07:55:11.000Z</published>
+    <updated>2020-09-14T02:22:11.967Z</updated>
+    
+    <content type="html"><![CDATA[<p>一，移位运算</p><ol><li>1&lt;&lt;2+3&lt;&lt;4 =1&lt;&lt;2 + 3&lt;&lt;4 =1乘2的平方+3乘2的4次方=4+3*16=52</li></ol><p>二，原码反码补码</p><ol><li><p>原码：为二进制的数，如：10   原码0000 1010</p><p>反码：正数与原码相同，如：10   反码0000 1010</p><p>负数为原码0变1，1变0，（符号位不变）如：</p><p>-10 原码1000 1010</p><p>​       反码1111 0101</p><p>补码：正数的补码与原码相同，如：</p><p>10   补码0000 1010</p><p>负数的补码为反码加1，如：-10   </p><p>反码：1111 0101   </p><p>补码：1111 0110</p></li><li><p>计算机中存储的都是补码，因为计算机中只有加法机，所以所有减法运算，都必须用加法进行。</p></li><li><p>用补数代替原数，可把减法转变为加法。出现的进位就是模，此时的进位，就应该忽略不计。</p></li><li><p>二进制下，有多少位数参加运算，模就是在 1 的后面加上多少个 0。</p></li><li><p>补码就是按照这个要求来定义的：正数不变，负数即用模减去绝对值。</p></li><li><p>计算机减法运算时因为-0和0希望只出现一个且满足正数负数相加等于0，所以存储的都是补码</p><p>举例，3和（-3）相加，0011 + 1101 =10000，丢掉最高位，就是0000（0）</p><p>4和（-3）相加，0100 + 1101 =0001</p></li><li><p>参考<a href="https://blog.csdn.net/zl1zl2zl3/article/details/53327216">https://blog.csdn.net/zl1zl2zl3/article/details/53327216</a></p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一，移位运算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;1&amp;lt;&amp;lt;2+3&amp;lt;&amp;lt;4 =1&amp;lt;&amp;lt;2 + 3&amp;lt;&amp;lt;4 =1乘2的平方+3乘2的4次方=4+3*16=52&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;二，原码反码补码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;原码：为二</summary>
+      
+    
+    
+    
+    <category term="深入理解计算机系统" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="笔记1" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B01/"/>
+    
+  </entry>
   
   <entry>
     <title>深入理解计算机系统</title>
