@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>深入理解计算机系统笔记二 | 流逝时光</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="流逝时光" type="application/atom+xml">
+</head><link rel="stylesheet" type="text/css" href="/plugins/prettify/doxy.css"><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">流逝时光</a></h1></div><p class="m-desc">记忆是流下的一半沙,剩下的一半是继续.<br>斯人若彩虹,遇上方知有.</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">深入理解计算机系统笔记二</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2020/09/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0%E4%BA%8C/">2020-09-17</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">深入理解计算机系统</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><p>一,寻址与字节顺序</p>
+<ol>
+<li><p>在几乎所有的机器上，多字节对象都被存储为连续的字节序列，对象的地址为所使用的字节中最小的地址。例如，int变量x的地址为0x100（假设数据类型int为32位表示）x 的4个字节将被存储在内存0x00,0x01,0x02,0x03位置，地址取最小的位置。</p>
+</li>
+<li><p>某些机器选择在内存中 按照从最低有效字节到最高有效字节的顺序存储对象—-最低有效字节在最前面称为小端法。</p>
+<p>小端法：      0x100                0x101                0x102                0x103            —</p>
+<p>​                        01                        23                    45                        67</p>
+<p>另一些机器则按照从最高有效字节到最低有效字节的顺序存储—–最高有效字节在前面的方式称为大端法。</p>
+<p>大端法：     0x100                0x101                0x102                0x103            —</p>
+<p>​                        67                    45                        23                        01</p>
+<h6 id="32位系统和64位系统字符串存储位数不同转化可能遇到问题，32位是字节地址，64位使用8字节地址"><a href="#32位系统和64位系统字符串存储位数不同转化可能遇到问题，32位是字节地址，64位使用8字节地址" class="headerlink" title="32位系统和64位系统字符串存储位数不同转化可能遇到问题，32位是字节地址，64位使用8字节地址"></a>32位系统和64位系统字符串存储位数不同转化可能遇到问题，32位是字节地址，64位使用8字节地址</h6></li>
+<li><p>布尔代数的运算。二进制1和0表示逻辑值TRUE或者FALSE，而运算符~，&amp;，|，^ 分别表示逻辑NOT(取反)，AND,OR,非（异或）</p>
+</li>
+<li><h3 id="切勿混用带符号类型和无符号类型"><a href="#切勿混用带符号类型和无符号类型" class="headerlink" title="切勿混用带符号类型和无符号类型"></a>切勿混用带符号类型和无符号类型</h3><p>如果表达式里既有带符号类型又有无符号类型，当带符号类型取值为负时会出现异常结果，这是因为带符号数会自动地转换成为无符号数。例如一个形如 a*b 的式子中，如果 a=-1,b=1，而且a，b都是int类型，则表达式的值显然为-1，然而如果a是int，而b是unsigned int，则结果须视在当前机器上int所占位数而定，在32位计算机系统中，结果是4294967295。</p>
+</li>
+<li><p>不同精度大数据量转换时需慎重</p>
+</li>
+</ol>
+<p>二,预防蠕虫与病毒</p>
+<ol>
+<li>蠕虫：可以自己运行，并且能够将自己的等效副本传播到其他机器。病毒：能将自己添加到包括操作系统在内的其他程序中，不能独立运行。通过输入给程序一个字符串，包含一些可执行代码的字节编码，称为攻击代码(病毒)。</li>
+<li>栈随机化：栈随机化的思想是使得栈的位置在程序每次运行时都有变化。因此，即使许多机器都运行同样的代码，栈地址不同。防止被相同病毒一起破坏。实现方法是：程序开始时，在栈上分配一段0-n字节之间的随机大小的空间</li>
+<li>栈破坏检测：在栈帧中任何局部缓冲区与栈状态之间存储一个特殊的金丝雀（cannary）值，也称哨兵值，是在程序每次运行时随机产生的，因此攻击者没有简单的方法知道他是什么。在恢复寄存器状态和从函数返回之前，程序检查这个金丝雀值是否被该函数的某个操作或者函数调用的某个函数的某个操作改变了。如果是的，那么程序异常终止。</li>
+<li>限制可执行代码区域：最后一招是消除攻击者向系统中插入可执行代码的能力。一种方法是限制哪些内存区域能够存放可执行代码。在典型的程序中只有保存编译器产生的代码的那部分内存才需要是可执行的。其他部分可以被限制只允许读和写。虚拟内存空间在逻辑上被分成了页，典型的每页是2048或者4096字节。</li>
+</ol>
+<p>三,优化程序性能</p>
+<ol>
+<li>减少过程调用</li>
+<li>消除不必要的内存引用</li>
+<li>提高并行性</li>
+</ol>
+<p>四,虚拟内存</p>
+<ol>
+<li><p>虚拟内存是计算机系统最重要的概念之一。它成功的原因是因为它是沉默地，自动工作的，不需要程序员干涉的。</p>
+<ul>
+<li>虚拟内存是核心的：虚拟内存遍及计算机系统所有层面</li>
+<li>虚拟内存是强大的。虚拟内存给予应用程序强大的能力，可以创建和销毁内存片，将内存片映射到磁盘文件的某个部分，以及其他进程共享内存。</li>
+<li>虚拟内存是危险的。每次程序引用一个变量，间接引用一个指针，动态分配程序时，它就会和虚拟内存发生交互。如果虚拟内存使用不当，应用将遇到复杂危险的与内存有关的错误。</li>
+</ul>
+</li>
+<li><p>计算机系统的主存被组织成一个有M个连续的字节大小的单元组成的数组，第一个字节地址0，最后一个字节地址M-1。每个字节都有唯一的物理地址（PA）。</p>
+</li>
+<li><p>虚拟寻址：cpu通过生成一个虚拟地址（VA）来访问主存，虚拟地址通过地址翻译转换为物理地址。</p>
+</li>
+<li><p>地址空间：是一个非负数整数地址的有序集合。如果地址空间中的整数是连续的，那么我们说它是一个线性地址空间。</p>
+</li>
+<li><p>虚拟内存作为缓存的工具：概念上而言，虚拟内存被组织为一个由存放在磁盘上的N个连续的字节大小的单元组成的数组。VM系统将虚拟内存分割称为虚拟页的大小固定的块来处理这个问题。每个虚拟页的大小为P=2的p次方字节。类似地，物理内存被分割为物理页。</p>
+</li>
+<li><p>在任意时刻虚拟页的集合都分为三个不相交的子集：</p>
+<ul>
+<li>未分配的：VM（虚拟机）系统还未分配的页。未分配的块没有任何数据和它们相关联，因此也就不占任何磁盘空间。</li>
+<li>缓存的：当前已缓存在物理内存中的已分配页。</li>
+<li>未缓存的：未缓存在物理内存中的已分配页。</li>
+</ul>
+</li>
+<li><p>访问虚拟内存比访问磁盘时间短。</p>
+</li>
+<li><ul>
+<li><h6 id="什么是虚拟内存"><a href="#什么是虚拟内存" class="headerlink" title="什么是虚拟内存"></a>什么是虚拟内存</h6><p>​    通过把一部分暂时不用的内存信息放到硬盘上</p>
+<p>​    局部性原理，程序运行时候只有部分<strong>必要的信息装入内存</strong></p>
+<p>​    内存中暂时<strong>不需要的内容放到硬盘上</strong>，当需要的时候从新交换回来</p>
+<p><strong>系统似乎提供了比实际内存大得多的容量，称之为虚拟内存</strong></p>
+<p> （1）<strong>局部性</strong>分为时间局部性和空间局部性</p>
+<p>​       <strong>时间局部性</strong>就是如果一块内存被访问的时候，很有可能在不远的将来还会被访问</p>
+<p>   <strong>空间局部性</strong>就是如果一块内存被访问，那么周围的内存也很有可能被访问</p>
+</li>
+<li><h6 id="什么是内存抖动（颠簸）-虚拟内存工作集的大小超过了物理内存大小，程序性能极慢"><a href="#什么是内存抖动（颠簸）-虚拟内存工作集的大小超过了物理内存大小，程序性能极慢" class="headerlink" title="什么是内存抖动（颠簸）:虚拟内存工作集的大小超过了物理内存大小，程序性能极慢"></a>什么是内存抖动（颠簸）:虚拟内存工作集的大小超过了物理内存大小，程序性能极慢</h6><p>本质是频繁的页调度行为</p>
+<p>频繁的页调度，进程不断产生缺页中断</p>
+<p>置换一个页，又不断再次需要这个页</p>
+<p><strong>运行程序太多；页面替换策略不好。通过杀掉一些无关的进程(终止进程)或者增加物理内存解决</strong></p>
+</li>
+</ul>
+</li>
+<li><p>输入/输出（I/O）是在主存和外部设备（例如磁盘驱动器，终端和网络之间）之间复制数据的过程。</p>
+<p>输入操作是从I/O设备复制数据到主存，而输出操作是从主存复制数据到I/O设备。</p>
+</li>
+</ol>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">流逝时光</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2020/09/17/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0%E4%BA%8C/">http://yoursite.com/2020/09/17/深入理解计算机系统笔记二/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">流逝时光的博客</a>！</span></div></blockquote></div></article><div class="p-info box"><span class="p-tags"><i class="fa fa-tag"></i><a href="/tags/%E7%AC%94%E8%AE%B0%E4%BA%8C/">笔记二</a></span></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E5%92%8C64%E4%BD%8D%E7%B3%BB%E7%BB%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%98%E5%82%A8%E4%BD%8D%E6%95%B0%E4%B8%8D%E5%90%8C%E8%BD%AC%E5%8C%96%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98%EF%BC%8C32%E4%BD%8D%E6%98%AF%E5%AD%97%E8%8A%82%E5%9C%B0%E5%9D%80%EF%BC%8C64%E4%BD%8D%E4%BD%BF%E7%94%A88%E5%AD%97%E8%8A%82%E5%9C%B0%E5%9D%80"><span class="toc-number">1.</span> <span class="toc-text">32位系统和64位系统字符串存储位数不同转化可能遇到问题，32位是字节地址，64位使用8字节地址</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E5%8B%BF%E6%B7%B7%E7%94%A8%E5%B8%A6%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%97%A0%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">切勿混用带符号类型和无符号类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-number">1.</span> <span class="toc-text">什么是虚拟内存</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%86%85%E5%AD%98%E6%8A%96%E5%8A%A8%EF%BC%88%E9%A2%A0%E7%B0%B8%EF%BC%89-%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E5%B7%A5%E4%BD%9C%E9%9B%86%E7%9A%84%E5%A4%A7%E5%B0%8F%E8%B6%85%E8%BF%87%E4%BA%86%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F%EF%BC%8C%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD%E6%9E%81%E6%85%A2"><span class="toc-number">2.</span> <span class="toc-text">什么是内存抖动（颠簸）:虚拟内存工作集的大小超过了物理内存大小，程序性能极慢</span></a></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="next" href="/2020/09/15/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0%E4%B8%80/">深入理解计算机系统笔记一 &gt;</a></div><div id="valine-comment"><style type="text/css">.night .v[data-class=v] a { color: #0F9FB4 !important; }
+.night .v[data-class=v] a:hover { color: #216C73 !important; }
+.night .v[data-class=v] li { list-style: inherit; }
+.night .v[data-class=v] .vwrap { border: 1px solid #223441; border-radius: 0; }
+.night .v[data-class=v] .vwrap:hover { box-shadow: 0 0 6px 1px #223441; }
+.night .v[data-class=v] .vbtn { border-radius: 0; background: none; }
+.night .v[data-class=v] .vlist .vcard .vh { border-bottom-color: #293D4E; }
+.night .v[data-class=v] .vwrap .vheader .vinput { border-bottom-color: #223441; }
+.night .v[data-class=v] .vwrap .vheader .vinput:focus { border-bottom-color: #339EB4; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre,.night .v[data-class=v] .vlist .vcard .vhead .vsys { background: #203240 !important; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre { color: #F0F0F0; font-size: 95%; }
+.v[data-class=v] .vcards .vcard .vh {border-bottom-color: #223441; }
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:before {background: linear-gradient(180deg,rgba(38,57,73,.4),rgba(38,57,73,.9));}
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:after {background: rgba(38,57,73,.9)}
+</style><div id="vcomment"></div><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'',
+  appKey:'',
+  lang: 'zh-cn',
+  placeholder:'ヾﾉ≧∀≦)o Come on, say something...',
+  avatar:'identicon',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></section><footer><p>Copyright © 2016 - 2020 <a href="/." rel="nofollow">流逝时光</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/plugins/prettify/prettify.js"></script><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>
