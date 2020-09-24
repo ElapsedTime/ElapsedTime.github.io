@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-24T09:06:54.772Z</updated>
+  <updated>2020-09-24T09:04:20.635Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>python基础教程笔记二</title>
-    <link href="http://yoursite.com/2020/09/24/python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
-    <id>http://yoursite.com/2020/09/24/python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0%E4%BA%8C/</id>
-    <published>2020-09-24T09:05:46.000Z</published>
-    <updated>2020-09-24T09:06:54.772Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="五。抽象"><a href="#五。抽象" class="headerlink" title="五。抽象"></a>五。抽象</h1><p>1. </p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;五。抽象&quot;&gt;&lt;a href=&quot;#五。抽象&quot; class=&quot;headerlink&quot; title=&quot;五。抽象&quot;&gt;&lt;/a&gt;五。抽象&lt;/h1&gt;&lt;p&gt;1. &lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="python基础教程" scheme="http://yoursite.com/categories/python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="python基础教程笔记二" scheme="http://yoursite.com/tags/python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
-    
-  </entry>
   
   <entry>
     <title>python基础教程笔记一</title>
